@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stilen.css">
+    <title>Document</title>
+    <style>
+body {
+    
+    background-color: rgb(148, 240, 240)
+
+
+}
+#hei {
+    width: 80%;
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: repeat(18, 1fr);
+    justify-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
+}
+#hei>div {
+border: solid black;
+text-align: center;
+max-height: 65px;
+height: 60px;
+}
+.ikke {
+    background-color: rgb(237, 100, 100);
+}
+.metall {
+    background-color: rgb(100, 162, 237);
+}
+.halvmetall {
+    background-color: rgb(70, 165, 73);
+}
+#hei2 {
+    display: flex;
+    flex-direction: row;
+}
+.metall :hover {
+    scale: 1.2;
+    transform: rotate(10deg);
+}
+.ikke :hover {
+    scale: 1.2;
+    transform: rotate(10deg);
+}
+.halvmetall :hover {
+    scale: 1.2;
+    transform: rotate(10deg);
+}
+.usyn :hover{
+    scale: 1;
+}
+h1 {
+    margin: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+    </style>
+</head>
+<body>
+
+<div id="hei">
+    <div class="ikke"><h1>H</h1></div>
+    <div class="usyn"style="grid-column: span 1; opacity: 0;">2</div>
+    <div class="usyn"style="grid-column: span 10; opacity: 1; border: 0;"><h1 style="margin-left:auto; margin-right: auto;">Periodesystemet</h1></div>
+    <div class="usyn" style="grid-column: span 5; opacity: 0;">2</div>
+    <div class="ikke"><h1>He</h1></div>
+    <div class="metall"><h1>Li</h1></div>
+    <div class="metall"><h1>Be</h1></div>
+    <div class="usyn"style="grid-column: span 10; opacity: 1; border: 0;"><p class="hei2" style="color: black; opacity:1;" >🟩 = Halvmetaller, 🟥 = Ikke-metaller, 🟦 = Metaller</p></div>
+    <div class="halvmetall"><h1>Mg</h1></div>
+    <div class="ikke"><h1>C</h1></div>
+    <div class="ikke"><h1>N</h1></div>
+    <div class="ikke"><h1>O</h1></div>
+    <div class="ikke"><h1>F</h1></div>
+    <div class="ikke"><h1>Ne</h1></div>
+    <div class="metall"><h1>Na</h1></div>
+    <div class="metall"><h1>Mg</h1></div>
+    <div style="grid-column: span 10; opacity: 0;">15</div>
+    <div class="metall"><h1>Al</h1></div>
+    <div class="halvmetall"><h1>Si</h1></div>
+    <div class="ikke"><h1>P</h1></div>
+    <div class="ikke"><h1>S</h1></div>
+    <div class="ikke"><h1>Cl</h1></div>
+    <div class="ikke"><h1>Ar</h1></div>
+    <div class="metall"><h1>K</h1></div>
+    <div class="metall"><h1>Ca</h1></div>
+    <div class="metall"><h1>Sc</h1></div>
+    <div class="metall"><h1>Ti</h1></div>
+    <div class="metall"><h1>V</h1></div>
+    <div class="metall"><h1>Cr</h1></div>
+    <div class="metall"><h1>Mn</h1></div>
+    <div class="metall"><h1>Fe</h1></div>
+    <div class="metall"><h1>Co</h1></div>
+    <div class="metall"><h1>Ni</h1></div>
+    <div class="metall"><h1>Cu</h1></div>
+    <div class="metall"><h1>Zn</h1></div>
+    <div class="metall"><h1>Ga</h1></div>
+    <div class="halvmetall"><h1>Ge</h1></div>
+    <div class="halvmetall"><h1>As</h1></div>
+    <div class="ikke"><h1>Se</h1></div>
+    <div class="ikke"><h1>Br</h1></div>
+    <div class="ikke"><h1>Kr</h1></div>
+    <div class="metall"><h1>Rb</h1></div>
+    <div class="metall"><h1>Sr</h1></div>
+    <div class="metall"><h1>Y</h1></div>
+    <div class="metall"><h1>Zr</h1></div>
+    <div class="metall"><h1>Nb</h1></div>
+    <div class="metall"><h1>Mo</h1></div>
+    <div class="metall"><h1>Tc</h1></div>
+    <div class="metall"><h1>Ru</h1></div>
+    <div class="metall"><h1>Rh</h1></div>
+    <div class="metall"><h1>Pd</h1></div>
+    <div class="metall"><h1>Ag</h1></div>
+    <div class="metall"><h1>Cd</h1></div>
+    <div class="metall"><h1>In</h1></div>
+    <div class="metall"><h1>Sn</h1></div>
+    <div class="halvmetall"><h1>Sb</h1></div>
+    <div class="halvmetall"><h1>Te</h1></div>
+    <div class="ikke"><h1>I</h1></div>
+    <div class="ikke"><h1>Xe</h1></div>
+    <div class="metall"><h1>Cs</h1></div>
+    <div class="metall"><h1>Ba</h1></div>
+    <div class="metall"><h1 style="font-size: 15px;">lantan-<br>oider</h1></div>
+    <div class="metall"><h1>Hf</h1></div>
+    <div class="metall"><h1>Ta</h1></div>
+    <div class="metall"><h1>W</h1></div>
+    <div class="metall"><h1>Re</h1></div>
+    <div class="metall"><h1>Os</h1></div>
+    <div class="metall"><h1>Ir</h1></div>
+    <div class="metall"><h1>Pt</h1></div>
+    <div class="metall"><h1>Au</h1></div>
+    <div class="metall"><h1>Hg</h1></div>
+    <div class="metall"><h1>Tl</h1></div>
+    <div class="metall"><h1>Pb</h1></div>
+    <div class="metall"><h1>Bi</h1></div>
+    <div class="metall"><h1>Po</h1></div>
+    <div class="ikke"><h1>At</h1></div>
+    <div class="ikke"><h1>Rn</h1></div>
+    <div class="metall"><h1>Fr</h1></div>
+    <div class="metall"><h1>Ra</h1></div>
+    <div class="metall"><h1 style="font-size: 15px;">aktin-<br>oider</h1></div>
+    <div class="metall"><h1>Rf</h1></div>
+    <div class="metall"><h1>Db</h1></div>
+    <div class="metall"><h1>Sg</h1></div>
+    <div class="metall"><h1>Bh</h1></div>
+    <div class="metall"><h1>Hs</h1></div>
+    <div class="metall"><h1>Mt</h1></div>
+    <div class="metall"><h1>Ds</h1></div>
+    <div class="metall"><h1>Rg</h1></div>
+    <div class="metall"><h1>Cn</h1></div>
+    <div class="metall"><h1>Nh</h1></div>
+    <div class="metall"><h1>Fl</h1></div>
+    <div class="metall"><h1>Mc</h1></div>
+    <div class="metall"><h1>Lv</h1></div>
+    <div class="metall"><h1>Ts</h1></div>
+    <div class="metall"><h1>Og</h1></div>
+    
+
+    <div style="grid-column: span 18; opacity: 0;">18</div>
+    <div style="grid-column: span 3; opacity: 0;">19</div>
+    <div class="metall"><h1>La</h1></div>
+    <div class="metall"><h1>Ce</h1></div>
+    <div class="metall"><h1>Pr</h1></div>
+    <div class="metall"><h1>Nd</h1></div>
+    <div class="metall"><h1>Pm</h1></div>
+    <div class="metall"><h1>Sm</h1></div>
+    <div class="metall"><h1>Eu</h1></div>
+    <div class="metall"><h1>Gd</h1></div>
+    <div class="metall"><h1>Tb</h1></div>
+    <div class="metall"><h1>Dy</h1></div>
+    <div class="metall"><h1>Ho</h1></div>
+    <div class="metall"><h1>Er</h1></div>
+    <div class="metall"><h1>Tm</h1></div>
+    <div class="metall"><h1>Yb</h1></div>
+    <div class="metall"><h1>Lu</h1></div>
+    <div style="grid-column: span 3; opacity: 0;">19</div>
+    <div class="metall"><h1>Ac</h1></div>
+    <div class="metall"><h1>Th</h1></div>
+    <div class="metall"><h1>Pa</h1></div>
+    <div class="metall"><h1>U</h1></div>
+    <div class="metall"><h1>Np</h1></div>
+    <div class="metall"><h1>Pu</h1></div>
+    <div class="metall"><h1>Am</h1></div>
+    <div class="metall"><h1>Cm</h1></div>
+    <div class="metall"><h1>Bk</h1></div>
+    <div class="metall"><h1>Cf</h1></div>
+    <div class="metall"><h1>Es</h1></div>
+    <div class="metall"><h1>Fm</h1></div>
+    <div class="metall"><h1>Md</h1></div>
+    <div class="metall"><h1>No</h1></div>
+    <div class="metall"><h1>Lr</h1></div>
+</div>
+</b2ody>
+</html>
