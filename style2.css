@@ -1,0 +1,161 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
+}
+
+nav {
+  display: flex;
+  padding: 2% 6%;
+  justify-content: space-between;
+  align-items: center;
+}
+nav img {
+  width: 95px;
+}
+.linker {
+  flex: 1;
+  text-align: right;
+}
+.linker ul li {
+  list-style: none;
+  display: inline-block;
+  padding: 8px 12px;
+  position: relative;
+}
+.linker ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 13px;
+}
+.linker ul li::after {
+  content: "";
+  width: 0%;
+  height: 2px;
+  background: #f44336;
+  display: block;
+  margin: auto;
+  transition: 0.5s;
+}
+.linker ul li:hover::after {
+  width: 100%;
+}
+.text-box {
+  width: 50%;
+  color: #000;
+  position: absolute;
+  margin-top: 5px;
+  margin-left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.text-box h1 {
+  font-size: 62px;
+}
+
+nav .fa {
+  display: none;
+}
+body {
+  background: linear-gradient(90deg, #15a170, #1589a1, #1546a1, #2c15a1);
+  background-size: 400% 400%;
+  animation: gradient 60s ease infinite;
+  height: 100vh;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 50% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+#meny {
+  display: flex;
+  width: 100%;
+}
+#helemeny {
+  height: 80%;
+  margin-top: 10%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.oppgaver {
+  background-color: #fff;
+  flex-grow: 1;
+  margin: 10px;
+  padding: 20px;
+  max-width: 23%;
+  max-height: 500px;
+  padding: 5px;
+  height: 180px;
+  border: solid black 2px;
+}
+
+#posisjonert {
+  width: 150px;
+  height: 150px;
+  padding: 10px;
+  position: absolute;
+  left: 70px;
+  top: 150px;
+  background-color: #b13e20;
+}
+
+#oppg {
+  font-size: 15px;
+  text-align: center;
+  color: black;
+}
+
+.preview {
+  width: 100%;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  padding-top: auto;
+  padding-bottom: auto;
+  max-height: 152px;
+  object-fit: contain;
+}
+
+.oppgaver {
+  transition: all 0.5s ease;
+}
+.oppgaver:hover {
+  color: white;
+  background-color: gray;
+  scale: 110%;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:active {
+  text-decoration: none;
+}
+
+h1 {
+  color: white;
+}
+
+p {
+  color: white;
+}

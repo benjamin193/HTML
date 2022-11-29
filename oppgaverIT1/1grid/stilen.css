@@ -1,0 +1,25 @@
+.ikke {
+  background-color: rgb(237, 100, 100);
+}
+.metall {
+  background-color: rgb(100, 162, 237);
+}
+.halvmetall {
+  background-color: rgb(70, 165, 73);
+}
+#hei2 {
+  display: flex;
+  flex-direction: row;
+}
+@media screen and (min-width: 320px) and (max-width: 767px) and (orientation: portrait) {
+  html {
+    transform: rotate(-90deg);
+    transform-origin: left top;
+    width: 100vh;
+    height: 100vw;
+    overflow-x: hidden;
+    position: absolute;
+    top: 100%;
+    left: 0;
+  }
+}
