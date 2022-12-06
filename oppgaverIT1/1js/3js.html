@@ -6,42 +6,47 @@
         background-color: burlywood;
         font-family: sans-serif;
       }
-      #oppgaven {
+      #innholdet {
         position: absolute;
         top: 50%;
         left: 50%;
         margin-right: -50%;
         transform: translate(-50%, -50%);
       }
+      h1 {
+        text-align: center;
+      }
     </style>
   </head>
   <body>
-    <div id="oppgaven">
-      <h1>Gjett passordet</h1>
-      <br />
+    <div id="innholdet">
+      <h1>Gjett Passordet</h1>
       <button type="button" onclick="gjettPassord()">Log in</button>
       <input type="password" id="passord" placeholder="gjett passord" />
     </div>
-
+    <p id="svar"></p>
     <script>
-      let passord = "Passord123";
+      let passord = "Passord";
       function gjettPassord() {
         let gjettPassord = document.getElementById("passord").value;
         if (gjettPassord == passord) {
           alert("Du valgte riktig passord");
         } else if (gjettPassord == "") {
         } else if (gjettPassord == "?lengde") {
-          document.getElementById().innerHTML = passord.length;
+          document.getElementById("svar").innerHTML = passord.length;
         } else if (gjettPassord == "?1") {
-          document.getElementById().innerHTML = passord[0];
+          document.getElementById("svar").innerHTML = passord[0];
         } else if (gjettPassord == "?2") {
-          document.getElementById().innerHTML = passord[1];
+          document.getElementById("svar").innerHTML = passord[1];
         } else if (gjettPassord == "?siste") {
-          document.getElementById().innerHTML = passord[(8, 11)];
+          document.getElementById("svar").innerHTML = passord.substring(
+            passord.length - 3,
+            passord.length
+          );
         } else if (gjettPassord == "?store") {
-          document.getElementById().innerHTML = passord.toUpperCase();
+          document.getElementById("svar").innerHTML = passord.toUpperCase();
         } else if (gjettPassord == "?små") {
-          document.getElementById().innerHTML = passord.toLowerCase();
+          document.getElementById("svar").innerHTML = passord.toLowerCase();
         } else {
           alert("Passordet er feil");
         }
