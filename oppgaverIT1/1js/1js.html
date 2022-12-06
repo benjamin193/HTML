@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var a = prompt("skriv første tall");
+      var b = prompt("skriv andre tall");
+
+      var operator = prompt("skriv inn operatoren");
+
+      if (operator == "+") {
+        var resultat1 = parseInt(a) + parseInt(b);
+        document.write("summen er " + resultat1);
+      }
+
+      if (operator == "-") {
+        var resultat2 = parseInt(a) - parseInt(b);
+        document.write("differansen er " + resultat2);
+      }
+
+      if (operator == "/") {
+        var resultat3 = parseInt(a) / parseInt(b);
+        document.write("svaret er " + resultat3);
+      }
+
+      if (operator == "*") {
+        var resultat4 = parseInt(a) * parseInt(b);
+        document.write("produktet er " + resultat4);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head> </head>
+  <body>
+    <script>
+      /* oppgave 1 */
+      function tilfeldigHilsen() {
+        let tilfeldigTall = parseInt(Math.random() * 3);
+        console.log(tilfeldigTall);
+        if (tilfeldigTall == 2) {
+          document.write("Oppgave 1 (Tilfeldighilsen): Hei");
+        } else if (tilfeldigTall == 1) {
+          document.write("Oppgave 1 (Tilfeldighilsen): God dag");
+        } else {
+          document.write("Oppgave 1 (Tilfeldighilsen): Hallo");
+        }
+      }
+      tilfeldigHilsen();
+    </script>
+    <br />
+    <script>
+      /* oppgave 2 */
+
+      function kvadrat(a) {
+        var tallet = prompt("skriv inn tallet du har lyst kvadraten til : ");
+        var gange = parseInt(tallet) * parseInt(tallet);
+        document.write(
+          "oppgave 2 (kvadrat av tall): kvadratet av tallet er : ",
+          gange
+        );
+      }
+      kvadrat();
+    </script>
+    <br />
+    <script>
+      /* oppgave 3 */
+      function sum(a, b) {
+        var a = prompt("finn sum av to tall, skriv inn første tall : ");
+        var b = prompt("finn sum av to tall, skriv inn andre tall : ");
+        var summen = parseInt(a) + parseInt(b);
+        document.write(
+          "oppgave 3 (sum oppgave): summen av tallene er : ",
+          summen
+        );
+      }
+      sum();
+    </script>
+  </body>
+</html>

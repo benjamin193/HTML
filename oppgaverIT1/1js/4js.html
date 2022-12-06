@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head> </head>
+  <body>
+    <script>
+      var tilfeldigTall;
+      tilfeldigTall = Math.random() * 80 + 1;
+      var tilfeldigTall = parseInt(tilfeldigTall);
+
+      document.write("du er: " + tilfeldigTall + " ar gammel, ");
+
+      if (tilfeldigTall <= 10) {
+        document.write("du er ung");
+      } else if (tilfeldigTall <= 20) {
+        document.write("du er ungdom");
+      } else if (tilfeldigTall <= 67) {
+        document.write("du er voksen");
+      } else if (tilfeldigTall <= 75) {
+        document.write("du er eldre");
+      } else if (tilfeldigTall == 67) {
+        document.write("du er pensjonist");
+      } else {
+        document.write("du er gammel");
+      }
+    </script>
+  </body>
+</html>
