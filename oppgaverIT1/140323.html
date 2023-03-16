@@ -3,218 +3,240 @@
   <head>
     <title>Visitt Kort</title>
     <style>
+      /* Input diven */
+      #inputs {
+        width: 20%;
+        float: left;
+      }
 
-/* Input diven */
-#inputs {
-  width: 20%;
-  float: left;
-}
+      /* Set the width of the input form to 10% */
+      form {
+        width: 90%;
+      }
 
-/* Set the width of the input form to 10% */
-form {
-  width: 90%;
-}
+      /* Style the input fields and labels */
+      form input[type="text"],
+      form select,
+      form input[type="date"],
+      form input[type="color"],
+      form input[type="file"],
+      form label {
+        display: block;
+        margin-bottom: 10px;
+        width: 100%;
+      }
 
-/* Style the input fields and labels */
-form input[type="text"], form select, form input[type="date"], form input[type="color"] , form input[type="file"], form label {
-  display: block;
-  margin-bottom: 10px;
-  width: 100%;
-}
+      /* Style the business card container */
+      #output {
+        width: 80%;
+        float: right;
+        height: 100vh;
+        background-color: #f0f0f0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
 
-/* Style the business card container */
-#output {
-  width: 80%;
-  float: right;
-  height: 100vh;
-  background-color: #f0f0f0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+      /* Style the business card itself */
+      .visitt-kort {
+        width: 50%;
+        height: 40%;
+        background-color: #fff;
+        border: solid 2px black;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
 
-/* Style the business card itself */
-.visitt-kort {
-  width: 50%;
-  height: 40%;
-  background-color: #fff;
-  border: solid 2px black;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 20px;
-  
-  position: relative;
-}
+        position: relative;
+      }
 
-/* Style the image inside the business card */
-.visitt-kort img {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 40%;
-  height: 100%;
-  object-fit: cover;
-}
+      /* Style the image inside the business card */
+      .visitt-kort img {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 40%;
+        height: 100%;
+        object-fit: cover;
+      }
 
-/* Style the heading inside the business card */
-.visitt-kort h2 {
-  margin-top: 0;
-  font-size: 2rem;
-}
+      /* Style the heading inside the business card */
+      .visitt-kort h2 {
+        margin-top: 0;
+        font-size: 2rem;
+      }
 
-/* Style the paragraphs inside the business card */
-.visitt-kort p {
-  margin: 0;
-  font-size: 1.2rem;
-  line-height: 1.5;
-}
+      /* Style the paragraphs inside the business card */
+      .visitt-kort p {
+        margin: 0;
+        font-size: 1.2rem;
+        line-height: 1.5;
+      }
 
-/* Style the job paragraph */
-.visitt-kort .job {
-  margin-bottom: 10px;
-}
+      /* Style the job paragraph */
+      .visitt-kort .job {
+        margin-bottom: 10px;
+      }
 
-/* Style the birthdate paragraph */
-.visitt-kort .birthdate {
-  margin-bottom: 10px;
-}
+      /* Style the birthdate paragraph */
+      .visitt-kort .birthdate {
+        margin-bottom: 10px;
+      }
 
-/* Style the phone number paragraph */
-.visitt-kort .phone {
-  margin-bottom: 10px;
-}
+      /* Style the phone number paragraph */
+      .visitt-kort .phone {
+        margin-bottom: 10px;
+      }
 
-/* Style the driving license paragraph */
-.visitt-kort .driving-license {
-  margin-bottom: 10px;
-}
+      /* Style the driving license paragraph */
+      .visitt-kort .driving-license {
+        margin-bottom: 10px;
+      }
 
-/* Style the gender paragraph */
-.gender {
-  margin-top: 10px;
-}
-
+      /* Style the gender paragraph */
+      .gender {
+        margin-top: 10px;
+      }
     </style>
-    </head>
+  </head>
   <body>
     <h1>visitt-kort</h1>
     <div id="inputs">
-    <form>
-      <label for="name">Name:</label>
-      <input type="text" id="name"  onkeyup="makeBusinessCard()"/>
-      <br />
-      <label for="phone">Phone Number:</label>
-      <input type="text" id="phone" pattern="[0-9]{8}" maxlength="8"  onkeyup="makeBusinessCard()"/>
-      <br />
-      <label for="job">Job:</label>
-      <input type="text" id="job"  onkeyup="makeBusinessCard()"/>
-      <br />
-      <label for="birthdate">Birthdate:</label>
-      <input type="date" id="birthdate"  oninput="makeBusinessCard()"/>
-      <br />
-      <label for="driving-license">Do you have a driving license?</label>
-      <input type="checkbox" id="driving-license"  oninput="makeBusinessCard()"/>
-      <br>
-      <label for="gender">Gender:</label>
-      <select id="gender" onchange="makeBusinessCard()">
-        <option value="male">Male</option>
-        <option value="female">Female</option>
-        <option value="other">Other</option>
-      </select>
-      <br />
-      <label for="border">Border (funker ikke ennå):</label>
-      <select id="border" onchange="updateBorder()">
-        <option value="solid">Solid</option>
-        <option value="dotted">Dotted</option>
-      </select>
-      <br />
-      <label for="picture">Picture:</label>
-      <input type="file" id="picture" accept="image/*" oninput="makeBusinessCard()"/>
-      <br />
-      <label for="bgcolor">Background Color:</label>
-      <input type="color" id="bgcolor" value="#ffffff"  oninput="makeBusinessCard()"/>
-      <br />
-      
-    </form>
-  </div>
+      <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" onkeyup="makeBusinessCard()" />
+        <br />
+        <label for="phone">Phone Number:</label>
+        <input
+          type="text"
+          id="phone"
+          pattern="[0-9]{8}"
+          maxlength="8"
+          onkeyup="makeBusinessCard()"
+        />
+        <br />
+        <label for="job">Job:</label>
+        <input type="text" id="job" onkeyup="makeBusinessCard()" />
+        <br />
+        <label for="birthdate">Birthdate:</label>
+        <input type="date" id="birthdate" oninput="makeBusinessCard()" />
+        <br />
+        <label for="driving-license">Do you have a driving license?</label>
+        <input
+          type="checkbox"
+          id="driving-license"
+          oninput="makeBusinessCard()"
+        />
+        <br />
+        <label for="gender">Gender:</label>
+        <select id="gender" onchange="makeBusinessCard()">
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="other">Other</option>
+        </select>
+        <br />
+        <label for="border">Border (funker ikke ennå):</label>
+        <select id="border" onchange="updateBorder()">
+          <option value="solid">Solid</option>
+          <option value="dotted">Dotted</option>
+        </select>
+        <br />
+        <label for="picture">Picture:</label>
+        <input
+          type="file"
+          id="picture"
+          accept="image/*"
+          oninput="makeBusinessCard()"
+        />
+        <br />
+        <label for="bgcolor">Background Color:</label>
+        <input
+          type="color"
+          id="bgcolor"
+          value="#ffffff"
+          oninput="makeBusinessCard()"
+        />
+        <br />
+      </form>
+    </div>
     <div id="output"></div>
     <script>
-    function makeBusinessCard() {
-  // Remove any previously created business cards
-  const existingCards = document.querySelectorAll(".visitt-kort");
-  existingCards.forEach(card => card.remove());
+      function makeBusinessCard() {
+        // Remove any previously created business cards
+        const existingCards = document.querySelectorAll(".visitt-kort");
+        existingCards.forEach((card) => card.remove());
 
-  // Get the form values
-  const name = document.getElementById("name").value;
-  const phone = document.getElementById("phone").value;
-  const job = document.getElementById("job").value;
-  const birthdate = document.getElementById("birthdate").value;
-  const drivingLicense = document.getElementById("driving-license").checked ? "Yes" : "No";
-  const gender = document.getElementById("gender").value;
-  const border = document.getElementById("border").value;
-  const picture = document.getElementById("picture").files[0];
-  const bgcolor = document.getElementById("bgcolor").value;
-  const output = document.getElementById("output");
+        // Get the form values
+        const name = document.getElementById("name").value;
+        const phone = document.getElementById("phone").value;
+        const job = document.getElementById("job").value;
+        const birthdate = document.getElementById("birthdate").value;
+        const drivingLicense = document.getElementById("driving-license")
+          .checked
+          ? "Yes"
+          : "No";
+        const gender = document.getElementById("gender").value;
+        const border = document.getElementById("border").value;
+        const picture = document.getElementById("picture").files[0];
+        const bgcolor = document.getElementById("bgcolor").value;
+        const output = document.getElementById("output");
 
-  // Create the business card element
-  const businessCard = document.createElement("div");
-  businessCard.classList.add("visitt-kort");
-  businessCard.style.backgroundColor = bgcolor;
-  businessCard.classList.add(border);
+        // Create the business card element
+        const businessCard = document.createElement("div");
+        businessCard.classList.add("visitt-kort");
+        businessCard.style.backgroundColor = bgcolor;
+        businessCard.classList.add(border);
 
-  // Add the image to the business card if one is selected
-  if (picture) {
-    const image = document.createElement("img");
-    image.src = URL.createObjectURL(picture);
-    businessCard.appendChild(image);
-  }
+        // Add the image to the business card if one is selected
+        if (picture) {
+          const image = document.createElement("img");
+          image.src = URL.createObjectURL(picture);
+          businessCard.appendChild(image);
+        }
 
-  // Add the text elements to the business card
-  const nameElement = document.createElement("h2");
-  nameElement.textContent = name;
-  businessCard.appendChild(nameElement);
+        // Add the text elements to the business card
+        const nameElement = document.createElement("h2");
+        nameElement.textContent = name;
+        businessCard.appendChild(nameElement);
 
-  const jobElement = document.createElement("p");
-  jobElement.classList.add("job");
-  jobElement.textContent = `Job: ${job}`;
-  businessCard.appendChild(jobElement);
+        const jobElement = document.createElement("p");
+        jobElement.classList.add("job");
+        jobElement.textContent = `Job: ${job}`;
+        businessCard.appendChild(jobElement);
 
-  const birthdateElement = document.createElement("p");
-  birthdateElement.classList.add("birthdate");
-  birthdateElement.textContent = `Birthdate: ${birthdate}`;
-  businessCard.appendChild(birthdateElement);
+        const birthdateElement = document.createElement("p");
+        birthdateElement.classList.add("birthdate");
+        birthdateElement.textContent = `Birthdate: ${birthdate}`;
+        businessCard.appendChild(birthdateElement);
 
-  const phoneElement = document.createElement("p");
-  phoneElement.classList.add("phone");
-  phoneElement.textContent = `Phone Number: ${phone}`;
-  businessCard.appendChild(phoneElement);
+        const phoneElement = document.createElement("p");
+        phoneElement.classList.add("phone");
+        phoneElement.textContent = `Phone Number: ${phone}`;
+        businessCard.appendChild(phoneElement);
 
-  const drivingLicenseElement = document.createElement("p");
-  drivingLicenseElement.classList.add("driving-license");
-  drivingLicenseElement.textContent = `Driving License: ${drivingLicense}`;
-  businessCard.appendChild(drivingLicenseElement);
+        const drivingLicenseElement = document.createElement("p");
+        drivingLicenseElement.classList.add("driving-license");
+        drivingLicenseElement.textContent = `Driving License: ${drivingLicense}`;
+        businessCard.appendChild(drivingLicenseElement);
 
-  const genderElement = document.createElement("p");
-  genderElement.classList.add("gender");
-  genderElement.textContent = `Gender: ${gender}`;
-  businessCard.appendChild(genderElement);
+        const genderElement = document.createElement("p");
+        genderElement.classList.add("gender");
+        genderElement.textContent = `Gender: ${gender}`;
+        businessCard.appendChild(genderElement);
 
-  output.appendChild(businessCard);
-}
-function updateBorder() {
-  const border = document.getElementById("border").value;
-  const existingCards = document.querySelectorAll(".visitt-kort");
-  existingCards.forEach(card => {
-    card.classList.remove("solid", "dotted");
-    card.classList.add(border);
-  });
-}
+        output.appendChild(businessCard);
+      }
+      function updateBorder() {
+        const border = document.getElementById("border").value;
+        const existingCards = document.querySelectorAll(".visitt-kort");
+        existingCards.forEach((card) => {
+          card.classList.remove("solid", "dotted");
+          card.classList.add(border);
+        });
+      }
 
-
-
-  makeBusinessCard();
-  </script>
+      makeBusinessCard();
+    </script>
   </body>
-</html>  
-
+</html>
