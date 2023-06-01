@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kortgenerator 2</title>
+  </head>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap");
+
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Comfortaa", cursive;
+      background-color: #f9faf4;
+    }
+
+    /* Grid layout */
+    body {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+
+    /* Stil for data-div */
+    #dataDiv {
+      grid-column: span 2;
+      border-radius: 10px;
+      background-color: #f9faf4;
+      border: solid 2px #679289;
+      padding: 0px 50px 0px 50px;
+      text-align: left;
+      align-items: left;
+      display: flex;
+      flex-direction: column;
+      background-color: #f9faf4;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    #dataDiv > div {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 10px;
+      align-items: left;
+    }
+
+    label {
+      font-size: 20px;
+      margin-top: 5px;
+      color: #f9a66c;
+      font-weight: bold;
+    }
+
+    /* Stil for kort-div */
+    #kort {
+      position: absolute;
+      top: 50%;
+      left: 30%;
+      transform: translateY(-50%);
+      height: 65%;
+      width: 60%;
+      background: #f9faf4;
+      border: solid 2px #679289;
+    }
+
+    #kort > div {
+      position: absolute;
+      top: 50px;
+      left: 50px;
+    }
+
+    /* Stiler for kort-elementer */
+    #kort-navn {
+      font-size: 30px;
+      margin-bottom: 30px;
+      color: black;
+    }
+
+    #kort-kjonn,
+    #kort-stilling,
+    #kort-adresse,
+    #kort-tlf,
+    #kort-email,
+    #kort-jobb,
+    #kort-fodselDato,
+    #kort-forerkort {
+      font-size: 20px;
+      margin-bottom: 15px;
+      color: black;
+    }
+
+    /* Stil for bilde-div */
+    #bildetDiv {
+      position: absolute;
+      width: 350px;
+      max-height: 550px;
+      right: 50px;
+      top: 50px;
+      border: solid 2px #679289;
+      z-index: 2;
+      object-fit: fill;
+    }
+
+    /* Overskriftsstil */
+    h1 {
+      text-align: center;
+      color: #679289;
+      margin-top: 5px;
+    }
+  </style>
+
+  <body>
+    <!-- Overskrift -->
+    <h1>Visitt-kort Maskin</h1>
+
+    <!-- Data-div -->
+    <div id="dataDiv">
+      <div>
+        <label for="VelgNavn">Fra databasen:</label>
+        <select id="VelgNavn" name="VelgNavn"></select>
+      </div>
+
+      <div>
+        <label for="navn">Navn:</label>
+        <input name="navn" id="navnInp" type="text" oninput="nyKort()" />
+      </div>
+
+      <div>
+        <label for="adresse">Adresse:</label>
+        <input
+          name="adresse"
+          id="adresseInp"
+          type="text"
+          oninput="nyKort()"
+        />
+      </div>
+
+      <div>
+        <label for="tlf">Telefonnummer:</label>
+        <input
+          type="tel"
+          id="tlfInp"
+          pattern="[0-9]{8}"
+          maxlength="8"
+          onkeyup="nyKort()"
+        />
+      </div>
+
+      <div>
+        <label for="email">Email:</label>
+        <input name="email" id="emailInp" type="email" oninput="nyKort()" />
+      </div>
+
+      <div>
+        <label for="kjonn">Kjønn:</label>
+        <select id="kjonnInp" onchange="nyKort()">
+          <option value="Mann">Mann</option>
+          <option value="Kvinne">Kvinne</option>
+          <option value="Annet">Annet</option>
+        </select>
+      </div>
+      <div>
+        <label for="forerkort">Har du førerkort?</label>
+        <input type="checkbox" id="forerkortInp" onchange="nyKort()" />
+      </div>
+      <div>
+        <label for="bgcolor">Bakgrunnsfarge:</label>
+        <input
+          type="color"
+          id="bgcolorInp"
+          value="#ffffff"
+          oninput="nyKort()"
+        />
+      </div>
+      <div>
+        <label for="jobb">Stilling:</label>
+        <input name="jobb" type="text" id="jobbInp" oninput="nyKort()" />
+      </div>
+      <div>
+        <label for="fodselDato">Fødselsdato:</label>
+        <input type="date" id="fodseldatoInp" oninput="nyKort()" />
+      </div>
+      <div>
+        <label for="bilde">Bilde:</label>
+        <input name="bilde" id="bildeInp" type="file" />
+      </div>
+    </div>
+
+    <!-- Kort-div -->
+    <div id="kort">
+      <div>
+        <div id="kort-navn"></div>
+        <div id="kort-adresse"></div>
+        <div id="kort-tlf"></div>
+        <div id="kort-email"></div>
+        <div id="kort-kjonn"></div>
+        <div id="kort-forerkort"></div>
+        <div id="kort-jobb"></div>
+        <div id="kort-fodselDato"></div>
+      </div>
+      <img src="" id="bildetDiv" />
+    </div>
+
+    <script src="database.js"></script>
+
+    <script>
+      // Variabler for kort-elementene
+      let kortNavn = document.getElementById("kort-navn");
+      let kortAdresse = document.getElementById("kort-adresse");
+      let kortTlf = document.getElementById("kort-tlf");
+      let kortEmail = document.getElementById("kort-email");
+      let kortKjonn = document.getElementById("kort-kjonn");
+      let kortForerkort = document.getElementById("kort-forerkort");
+      let kortFodselDato = document.getElementById("kort-fodselDato");
+      let kortJobb = document.getElementById("kort-jobb");
+      let kortBilde = document.getElementById("bildetDiv");
+      let kort = document.getElementById("kort");
+      let inpFilNavn = document.getElementById("bildeInp");
+
+      // Event listener for bildevalg
+      inpFilNavn.addEventListener("change", velgFil);
+
+      // Fyll inn select-elementet med navn fra databasen
+      var minListe = document.getElementById("VelgNavn");
+      let i = 0;
+      while (i <= 4) {
+        minListe.innerHTML += "<option>" + data.kortArray[i].navn + "</option>";
+        i++;
+      }
+      minListe.onchange = function () {
+        lagKort(minListe.selectedIndex);
+      };
+
+      // Oppdaterer kortet basert på inndata
+      function nyKort() {
+        kortNavn.innerHTML = document.getElementById("navnInp").value;
+        kortAdresse.innerHTML = document.getElementById("adresseInp").value;
+        kortTlf.innerHTML = document.getElementById("tlfInp").value;
+        kortEmail.innerHTML = document.getElementById("emailInp").value;
+        kortKjonn.innerHTML = document.getElementById("kjonnInp").value;
+        kortForerkort.innerHTML = document.getElementById("forerkortInp")
+          .checked
+          ? "Har førerkort"
+          : "Har ikke førerkort";
+        kortFodselDato.innerHTML =
+          document.getElementById("fodseldatoInp").value;
+        kortJobb.innerHTML = document.getElementById("jobbInp").value;
+        kort.style.backgroundColor =
+          document.getElementById("bgcolorInp").value;
+      }
+
+      // Oppdaterer kortet basert på valg fra databasen
+      function lagKort(index) {
+        kortNavn.innerHTML = data.kortArray[index].navn;
+        kortAdresse.innerHTML = data.kortArray[index].adresse;
+        kortTlf.innerHTML = data.kortArray[index].tlf;
+        kortEmail.innerHTML = data.kortArray[index].email;
+        kortKjonn.innerHTML = data.kortArray[index].kjonn;
+        kortForerkort.innerHTML = data.kortArray[index].forerkort
+          ? "Har førerkort"
+          : "Har ikke førerkort";
+        kortFodselDato.innerHTML = data.kortArray[index].fodselDato;
+        kortJobb.innerHTML = data.kortArray[index].jobb;
+        kortBilde.src = data.kortArray[index].bilde;
+        kort.style.backgroundColor =
+          document.getElementById("bgcolorInp").value;
+      }
+
+      // Velger fil for visning
+      function velgFil() {
+        var aktueltFilNavn = URL.createObjectURL(inpFilNavn.files[0]);
+        bildetDiv.src = aktueltFilNavn;
+      }
+    </script>
+  </body>
+</html>
