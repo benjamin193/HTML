@@ -1,92 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Benjamin Hjemmeside</title>
-    <link rel="stylesheet" href="style2.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IT1 Benjamin</title>
+    <style>
+      /* Importering av fonten */
+      @import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap");
 
-    <section class="banner">
-    
-        <nav>
-            <a href="https://helull.github.io/IT1-2022/elever.html"><img src="bilder22/joe.PNG" ></a>
-            <div class="linker">
-            <!--Her ser du listen av alt som må være med i siden
-                <ul>
-                        <li><a href="#">h</a></li>
-                        <li><a href="#">h</a></li>
-                        <li><a href="#">h</a></li>
-                        <li><a href="#">h</a></li>
-                </ul>
-    ------>
-            </div>
-            
-        </nav>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      /* Bakgrunnsfarge og font */
+      body {
+        font-family: "Comfortaa", cursive;
+        background-color: #f9faf4;
+      }
 
+      /* Stil for hovedoppsett */
+      .oppsett {
+        width: 100%;
+        height: 100vh;
+        text-align: center;
+        margin: 0;
+      }
 
-<div class="text-box">
-<h1>Benjamin IT1</h1>
-<p> Her legger jeg ut oppgaver jeg har gjort i løpet av året i IT1, 
-    <br> Nedenfor kan du finne noen av de oppgavene.
-</p>
-</div>
-<section id="helemeny">
-    <div id="meny">
-        <a href="oppgaverIT1/1innleveringIT1/index2.html" target="_blank" class="oppgaver"> <h1 id="oppg"> Første valgfri oppgave </h1> 
-        <img class="preview" src="bilder22/oppgave1.png">
-        </a>
-        <a href="oppgaverIT1/1tabellIT1/ukeplan.html" target="_blank" class="oppgaver">  <h1 id="oppg"> Tabel oppgave </h1> 
-        <img class="preview" src="bilder22/tabell1.png">
-        </a>
-        <a href="oppgaverIT1/2innleveringIT1/index3.html"  target="_blank" class="oppgaver"> <h1 id="oppg"> Andre valgfri oppgave </h1> 
-       <img class="preview" src="bilder22/oppgave2.png">
-    </a>
-    <a href="oppgaverIT1/2grid/ringer.html"  target="_blank" class="oppgaver"> <h1 id="oppg"> Olympiske ringer oppgave </h1> 
-        <img class="preview" src="bilder22/oppgave5.png">
-    </a>
-        
+      /* Stil for fleksibelt layout */
+      .flex {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+      }
+
+      /* Stil for rutenett-layout */
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        margin-top: 50rem;
+      }
+
+      /* Stil for informasjonselementer */
+      #info > h1 {
+        color: #f9a66c;
+        font-size: 70px;
+        text-transform: uppercase;
+        margin-top: 40%;
+      }
+
+      #info > h2 {
+        color: #ffc94b;
+        font-size: 40px;
+        margin-bottom: 20px;
+      }
+
+      /* Stil for prosjektoppføring */
+      #prosjekter > p {
+        color: #679289;
+        font-size: 15px;
+        margin-bottom: 20px;
+      }
+
+      /* Stil for prosjekttittel */
+      .prosjektTittel {
+        font-size: 30px;
+        margin-bottom: 15px;
+        color: #f9faf4;
+        margin-top: 125px;
+      }
+
+      /* Stil for prosjektrute */
+      .prosjekterGrid {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        background-color: transparent;
+        width: 60%;
+        height: 160px;
+        border-radius: 20px;
+        margin: 0 auto;
+        margin-bottom: 20px;
+        padding: 20px;
+        text-align: center;
+        border: 2px solid #679289;
+        box-sizing: border-box;
+      }
+
+      .prosjekterGrid h3.prosjektTittel {
+        font-size: 25px;
+        margin-bottom: 15px;
+        color: #ffc94b;
+        margin-top: 0;
+      }
+
+      .prosjekterGrid p {
+        color: #f9a66c;
+        font-size: 15px;
+        margin-bottom: 10px;
+      }
+
+      .prosjekterGrid.link {
+        padding: 10px 20px;
+        border: 2px solid;
+        border-radius: 10px;
+        font-size: 12px;
+      }
+
+      /* Stil for hele prosjekttittelen */
+      #prosjektTittelHele {
+        font-size: 70px;
+        color: #ffc94b;
+        margin-bottom: 20px;
+      }
+
+      /* Stil for hovedoppsettet i rutenett-layout */
+      .oppsett.grid {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: calc(100vh - 100px);
+      }
+
+      /* Stil for lenkeknapp */
+      .link {
+        padding: 15px 15px;
+        border: 2px solid;
+        border-radius: 10px;
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        text-align: center;
+        color: #f17a7e;
+        font-weight: bold;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      /* Stil for hover-effekt på lenkeknapp */
+      .link:hover {
+        background-color: #f17a7e;
+        color: #fff;
+      }
+
+      /* Scroll-stil */
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Introduksjon -->
+    <div class="oppsett flex">
+      <div id="info">
+        <h1>
+          <span>Mine GitHub<br />prosjekter</span>
+        </h1>
+        <h2>Skoleår: 2022-2023</h2>
+        <a class="link" href="#prosjekter">Mine Prosjekter</a>
       </div>
-      <div id="meny">
-        <a href="oppgaverIT1/1grid/index.html"  target="_blank" class="oppgaver"> <h1 id="oppg"> Periodesystemet </h1> 
-            <img class="preview" src="bilder22/oppgave3.png">
-        </a>
-        <a href="oppgaverIT1/1js/3js.html"  target="_blank" class="oppgaver"> <h1 id="oppg"> JS Hemmelig passord </h1>
-            <img class="preview" src="bilder22/oppgave62.png">
-        </a>
-        <a href="oppgaverIT1/1js/0js.html"  target="_blank" class="oppgaver"> <h1 id="oppg"> JS oppgaver </h1> 
-            <img class="preview" src="bilder22/oppgave 4.png">
-        </a>
-        <a href="oppgaverIT1/skudår/skudar.html"  target="_blank" class="oppgaver"> <h1 id="oppg"> Skuddår oppgave </h1> 
-            <img class="preview" src="bilder22/oppgave7.png">
-        </a>
-        
-        
+    </div>
+    <!-- Prosjekter -->
+    <div class="oppsett grid">
+      <div id="prosjekter">
+        <h2 id="prosjektTittelHele">Mine prosjekter</h2>
+
+        <!-- Yatzy Oppgave -->
+        <div class="prosjekterGrid">
+          <h3 class="prosjektTittel">Yatzy Oppgave</h3>
+          <p>Oppgaven handlet om å utvikle et Yatzy-spill</p>
+          <a class="link" href="noe.html" target="_blank">Klikk her</a>
+        </div>
+
+        <!-- Visittkort Oppgave -->
+        <div class="prosjekterGrid">
+          <h3 class="prosjektTittel">Visittkort Oppgave</h3>
+          <p>Visittkort-maskin som kan hente informasjon fra en database</p>
+          <a class="link" href="visittkort.html" target="_blank">Klikk her</a>
+        </div>
       </div>
-      <div id="meny">
-        <a href="#"  target="_blank" class="oppgaver"> <h1 id="oppg"> Yatzee oppgave </h1>
-            <img class="preview" src="bilder22/tomt.jpg">
-        </a>
-        <a href="oppgaverIT1\3js\140323.html"  target="_blank" class="oppgaver"> <h1 id="oppg"> Visittkort Oppgave </h1> 
-            <img class="preview" src="bilder22/tomt.jpg">
-        </a>
-        <a href="#"  target="_blank" class="oppgaver"> <h1 id="oppg"> ikke ferdig </h1> 
-            <img class="preview" src="bilder22/tomt.jpg">
-        </a>
-        <a href="#"  target="_blank" class="oppgaver"> <h1 id="oppg"> ikke ferdig </h1> 
-            <img class="preview" src="bilder22/tomt.jpg">
-        </a>
-        
-      </div>
-</section>
-
-
-
-
-</body>
+    </div>
+  </body>
 </html>
